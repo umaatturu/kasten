@@ -19,7 +19,9 @@ $helm install k10 kasten/k10 --namespace=kasten-io \
    --set-string injectKanisterSidecar.namespaceSelector.matchLabels.k10/injectKanisterSidecar=true # optional
 ```   
  ### Validating the install
-*$kubectl get pods --namespace kasten-io –watch*
+ ```
+$kubectl get pods --namespace kasten-io –watch
+```
 #### kasten dashboard access
 *$kubectl --namespace kasten-io port-forward service/gateway 8080:8000* 
 #### Deploy the application
@@ -29,9 +31,32 @@ $kubectl create namespace <namespace>
 ```
 *If injectKanisterSidecar.namespaceSelector labels are set while installing K10, add the labels to namespace to match namespaceSelector*
 ```
-*$kubectl label namespace <namespace> k10/injectKanisterSidecar=true*
+$kubectl label namespace <namespace> k10/injectKanisterSidecar=true
 ```
 #### Deploying in a specific namespace
-*$kubectl apply --namespace=<namespace> -f deployment.yaml*
+``` 
+$kubectl apply --namespace=<namespace> -f deployment.yaml
+```
 #### List pods
-*$kubectl get pods --namespace=<namespace> | grep demo-app*  
+```
+$kubectl get pods --namespace=<namespace> | grep demo-app
+```
+### Insert Data
+#### Get pods for the demo application from its namespace
+**Copy required data manually into the pod**
+```   
+$kubectl cp <file-name> <namespace>/<pod>:/data/
+   ```
+**Verify if the data was copied successfully*
+```
+   kubectl exec --namespace=<namespace> <pod> -- ls -l /data
+   ```
+ ### Take bacup data from kasten
+ ### Destroy data
+ ```
+ kubectl exec --namespace=<namespace> <pod> -- rm -rf /data/<file-name>
+ ```
+#### Restore data from kasten
+**Restore the data using K10 by selecting the appropriate restore point**
+   
+

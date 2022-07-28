@@ -3,10 +3,10 @@
 ### Requirement
 ### K3 cluster Installation :
 ```
-$url -sfL https://get.k3s.io | sh -
+$curl -sfL https://get.k3s.io | sh -
 $export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 $sudo chmod 644 $KUBECONFIG 
-$kubectl get node
+$kubectl get nodes
 ```
 ### Enable Kanister Sidecar Injection while installing k10
 ### K10 installation:

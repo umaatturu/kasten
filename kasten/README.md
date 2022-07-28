@@ -65,16 +65,9 @@ $kubectl exec --namespace=<namespace> <pod> -- ls -l /data
  ## Create location profile : 
  ![image](https://user-images.githubusercontent.com/96052107/181493595-7e505d17-2961-46e5-ac46-0c0832b3e883.png)
  
- ## Backup data 
-MD5 on the original file copied
-md5 <file-name>
+ ## Backup data
+ ![image](https://user-images.githubusercontent.com/96052107/181502996-2345ed71-7f8f-4193-b98b-d46972f2395b.png)
 
-Copy the restored data back to local env
-kubectl get pods --namespace=<namespace> | grep demo-app
-kubectl cp <namespace>/<pod>:/data/<filename> <new-filename>
-
-MD5 on the new file
-md5 <new-filename>
 
 ## Destroy Data 
 **To destroy the data manually, run the following command:**

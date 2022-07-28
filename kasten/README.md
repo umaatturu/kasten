@@ -24,6 +24,8 @@ $kubectl get pods --namespace kasten-io –watch
 ```
 #### kasten dashboard access
 *$kubectl --namespace kasten-io port-forward service/gateway 8080:8000* 
+*The K10 dashboard will be available at http://127.0.0.1:8080/k10/#/*
+
 #### Deploy the application
 *Create a namespace for deployment:*
 ```
@@ -47,14 +49,19 @@ $kubectl get pods --namespace=<namespace> | grep demo-app
 ```   
 $kubectl cp <file-name> <namespace>/<pod>:/data/
    ```
-**Verify if the data was copied successfully*
+**Verify if the data was copied successfully**
 ```
-   kubectl exec --namespace=<namespace> <pod> -- ls -l /data
+kubectl exec --namespace=<namespace> <pod> -- ls -l /data
    ```
- ### Take bacup data from kasten
+
+ ### Take bacup data from kasten (create policy)
+ ![image](https://user-images.githubusercontent.com/96052107/181490958-8a44cca3-f45b-47b4-b540-820e7cf0fc13.png)
+ ### Create location profile :
+ ![image](https://user-images.githubusercontent.com/96052107/181492666-84e2d67f-91bd-4edf-be12-f04535332dee.png)
+
  ### Destroy data
  ```
- kubectl exec --namespace=<namespace> <pod> -- rm -rf /data/<file-name>
+kubectl exec --namespace=<namespace> <pod> -- rm -rf /data/<file-name>
  ```
 #### Restore data from kasten
 **Restore the data using K10 by selecting the appropriate restore point**

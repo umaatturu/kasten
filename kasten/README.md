@@ -54,24 +54,26 @@ $kubectl cp <file-name> <namespace>/<pod>:/data/
 $kubectl exec --namespace=<namespace> <pod> -- ls -l /data
 ```  
 
- ### Take bacup data from kasten (create policy)
+ ## Take bacup data from kasten (create policy)
  ![image](https://user-images.githubusercontent.com/96052107/181490958-8a44cca3-f45b-47b4-b540-820e7cf0fc13.png)
  
  
- ### Create location profile : 
- [image](https://user-images.githubusercontent.com/96052107/181493595-7e505d17-2961-46e5-ac46-0c0832b3e883.png)
+ ## Create location profile : 
+ ![image](https://user-images.githubusercontent.com/96052107/181493595-7e505d17-2961-46e5-ac46-0c0832b3e883.png)
 
  
-  ### Destroy data
+### Destroy data
  ```
 $kubectl exec --namespace=<namespace> <pod> -- rm -rf /data/<file-name>
  ```
 
-#### Restore data from kasten
-**Restore the data using K10 by selecting the appropriate restore point**
-![image](https://user-images.githubusercontent.com/96052107/181494351-19221326-dd79-4a02-adb6-2f86937fec20.png)
-#### Restore data from kasten dashboard
+## Restore data from kasten
+## Restore the data using K10 by selecting the appropriate restore point
 
-   ![image](https://user-images.githubusercontent.com/96052107/181495099-c159856a-5544-4ffc-9a92-10c71d3bd866.png)
+![image](https://user-images.githubusercontent.com/96052107/181494351-19221326-dd79-4a02-adb6-2f86937fec20.png)
+
+## Restore data from kasten dashboard
+
+![image](https://user-images.githubusercontent.com/96052107/181495099-c159856a-5544-4ffc-9a92-10c71d3bd866.png)
 
 

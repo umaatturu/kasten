@@ -90,7 +90,7 @@ $kubectl exec --namespace=<namespace> <pod> -- rm -rf /data/<file-name>
 
 **MD5 on the original file copied**
 ```
-$md5 <file-name>
+$md5sum <file-name>
 ```
 **Copy the restored data back to local env**
 ```
@@ -99,6 +99,6 @@ kubectl cp <namespace>/<pod>:/data/<filename> <new-filename>
 ```
 **MD5 on the new file**
 ```
-md5 <new-filename>
+md5sum <new-filename>
 ```
 

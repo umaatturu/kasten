@@ -23,8 +23,10 @@ $helm install k10 kasten/k10 --namespace=kasten-io \
 $kubectl get pods --namespace kasten-io –watch
 ```
 #### kasten dashboard access
-*$kubectl --namespace kasten-io port-forward service/gateway 8080:8000* 
-*The K10 dashboard will be available at http://127.0.0.1:8080/k10/#/*
+```
+$kubectl --namespace kasten-io port-forward service/gateway 8080:8000
+```
+**The K10 dashboard will be available at http://127.0.0.1:8080/k10/#/**
 
 #### Deploy the application
 *Create a namespace for deployment:*
@@ -44,7 +46,9 @@ $kubectl apply --namespace=<namespace> -f deployment.yaml
 $kubectl get pods --namespace=<namespace> | grep demo-app
 ```
 ### Insert Data
+
 #### Get pods for the demo application from its namespace
+
 **Copy required data manually into the pod**
 ```   
 $kubectl cp <file-name> <namespace>/<pod>:/data/
@@ -71,6 +75,7 @@ $kubectl exec --namespace=<namespace> <pod> -- rm -rf /data/<file-name>
 ```
 
 ## Restore data from kasten
+
 ## Restore the data using K10 by selecting the appropriate restore point
 
 ![image](https://user-images.githubusercontent.com/96052107/181494351-19221326-dd79-4a02-adb6-2f86937fec20.png)

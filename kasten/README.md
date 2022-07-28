@@ -66,7 +66,15 @@ $kubectl exec --namespace=<namespace> <pod> -- ls -l /data
  ![image](https://user-images.githubusercontent.com/96052107/181493595-7e505d17-2961-46e5-ac46-0c0832b3e883.png)
  
  ## Backup data 
-![image](https://user-images.githubusercontent.com/96052107/181498005-cadaf0cb-4f76-48a3-8e22-abf7f9af94ff.png)
+MD5 on the original file copied
+md5 <file-name>
+
+Copy the restored data back to local env
+kubectl get pods --namespace=<namespace> | grep demo-app
+kubectl cp <namespace>/<pod>:/data/<filename> <new-filename>
+
+MD5 on the new file
+md5 <new-filename>
 
 ## Destroy Data 
 **To destroy the data manually, run the following command:**

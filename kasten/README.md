@@ -102,6 +102,7 @@ kubectl cp <namespace>/<pod>:/data/<filename> <new-filename>
 ```
 md5sum <new-filename>
 ```
+.
 
 
 

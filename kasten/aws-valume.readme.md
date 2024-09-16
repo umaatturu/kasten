@@ -33,7 +33,7 @@ For Execution role, from the dropdown list, select Use an existing role.
 For Existing role, select the role created in the previous step for the Lambda function
 
 Then open the code editor and write the code, using the below code and correct SNS topic ARN and then select Deploy.
-import boto3
+```import boto3
 def lambda_handler(event, context):
     ec2_client = boto3.client('ec2')
     sns_client = boto3.client('sns')
@@ -61,6 +61,7 @@ def lambda_handler(event, context):
         Message = email_body
     )
     print(email_body)
+```
 Now lambda function is ready for execution.
 Create EventBridge Scheduler
 In EventBridge console select the create rule,
@@ -72,3 +73,5 @@ Once you click the create schedule every day 10a.m scheduler trigger to lambda f
 
 Conclusion
 In the blog, instructions were provided on receiving email notifications about a list of unused EBS volumes, enabling review for further action and deletion if unnecessary to reduce the cost of the monthly Amazon bill.
+
+https://medium.com/p/6425b2119f5f/edit

@@ -33,7 +33,8 @@ For Execution role, from the dropdown list, select Use an existing role.
 For Existing role, select the role created in the previous step for the Lambda function
 
 Then open the code editor and write the code, using the below code and correct SNS topic ARN and then select Deploy.
-```import boto3
+```
+import boto3
 def lambda_handler(event, context):
     ec2_client = boto3.client('ec2')
     sns_client = boto3.client('sns')
